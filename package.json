@@ -1,0 +1,16 @@
+{
+  "name": "asc-backend",
+  "version": "0.0.1",
+  "description": "Automated System of the Competitions (Backend)",
+  "main": "server.js",
+  "keywords": [
+    "asc",
+    "competitions",
+    "backend"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruslan Nekhoroshkin <nrvru@yandex.ru>",
+  "license": "MIT"
+}
