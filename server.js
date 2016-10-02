@@ -1,6 +1,6 @@
-const Koa = require('koa');
-const app = new Koa();
+import Koa from 'koa';
 
+const app = new Koa();
 const port = 8000;
 const hostname = '127.0.0.1';
 
@@ -10,7 +10,5 @@ app.use(async (ctx, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://${hostname}:${port}/`)
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
-
-module.exports = app;

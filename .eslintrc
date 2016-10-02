@@ -1,0 +1,20 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "no-param-reassign": ["error", {
+      "props": false
+    }]
+  },
+  "settings": {
+    "ecmascript": 6
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "parser": "babel-eslint"
+}
