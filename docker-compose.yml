@@ -6,8 +6,18 @@ services:
       - .:/code
     ports:
       - '8000:8000'
-    command: node /code/index.js
+    command: npm run watch
+    working_dir: /code
     depends_on:
       - db
+    networks:
+      - network
+
   db:
     image: mongo:3.2.10
+    networks:
+      - network
+
+networks:
+  network:
+    driver: bridge

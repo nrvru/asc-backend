@@ -1,14 +1,20 @@
 import Koa from 'koa';
+import logger from 'koa-logger';
+import bodyParser from 'koa-bodyparser';
+import db from './db';
+import config from './config';
+import router from './routes';
+
+db.on('error', console.error.bind(console, 'connection error:'));
 
 const app = new Koa();
-const port = 8000;
-const hostname = '127.0.0.1';
 
-app.use(async (ctx, next) => {
-  ctx.body = 'Hello World';
-  await next();
-});
+app
+  .use(logger())
+  .use(bodyParser())
+  .use(router.routes())
+  .use(router.allowedMethods());
 
-app.listen(port, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(config.port, () => {
+  console.log(`Server running at http://${config.hostname}:${config.port}/`);
 });
